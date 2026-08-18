@@ -16,7 +16,7 @@ WORKDIR /app/frontend
 
 COPY --from=base /app/frontend/package*.json ./
 COPY --from=base /app/frontend/.next ./.next
-COPY --from=base /app/frontend/public ./public
+# COPY --from=base /app/frontend/public ./public
 COPY --from=base /app/frontend/node_modules ./node_modules
 COPY --from=base /app/frontend/next.config.mjs ./next.config.mjs
 COPY --from=base /app/frontend/postcss.config.mjs ./postcss.config.mjs
