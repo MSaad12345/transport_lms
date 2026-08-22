@@ -2,12 +2,12 @@
 
 Full-stack enterprise logistics platform built from the LMS PRD.
 
-| Layer | Stack |
-|-------|--------|
-| **Frontend** | Next.js 15 (App Router) · React 19 · Tailwind CSS v4 |
-| **Backend** | Node.js · Express · **OOP** (classes for App, Server, Services, Controllers, Middleware) |
-| **Database** | MongoDB (`mongodb://localhost:27017/lms`) via Mongoose |
-| **Auth** | JWT + bcrypt + RBAC (7 roles) |
+| Layer        | Stack                                                                                    |
+| ------------ | ---------------------------------------------------------------------------------------- |
+| **Frontend** | Next.js 15 (App Router) · React 19 · Tailwind CSS v4                                     |
+| **Backend**  | Node.js · Express · **OOP** (classes for App, Server, Services, Controllers, Middleware) |
+| **Database** | MongoDB (`mongodb://localhost:27017/lms`) via Mongoose                                   |
+| **Auth**     | JWT + bcrypt + RBAC (7 roles)                                                            |
 
 ---
 
@@ -93,15 +93,15 @@ Open **http://localhost:3000**
 
 Password for all accounts: **`Password123!`**
 
-| Role | Email |
-|------|--------|
-| Super Admin | `admin@lms.io` |
-| Business Manager | `manager@lms.io` |
-| Dispatcher | `dispatch@lms.io` |
-| Warehouse | `warehouse@lms.io` |
-| Finance | `finance@lms.io` |
-| Driver | `driver@lms.io` |
-| Customer | `customer@lms.io` |
+| Role             | Email              |
+| ---------------- | ------------------ |
+| Super Admin      | `admin@lms.io`     |
+| Business Manager | `manager@lms.io`   |
+| Dispatcher       | `dispatch@lms.io`  |
+| Warehouse        | `warehouse@lms.io` |
+| Finance          | `finance@lms.io`   |
+| Driver           | `driver@lms.io`    |
+| Customer         | `customer@lms.io`  |
 
 ---
 
@@ -109,30 +109,30 @@ Password for all accounts: **`Password123!`**
 
 Base URL: `http://localhost:5000/api`
 
-| Method | Path | Description |
-|--------|------|-------------|
-| POST | `/auth/login` | Login |
-| POST | `/auth/register` | Register |
-| GET | `/auth/me` | Current user |
-| GET | `/dashboard` | KPI dashboard |
-| GET/POST | `/orders` | List / create orders |
-| POST | `/orders/:id/advance` | Advance status |
-| POST | `/orders/:id/assign` | Assign driver |
-| POST | `/orders/:id/auto-assign` | AI assign one |
-| POST | `/dispatch/auto-assign` | AI assign queue |
-| GET | `/vehicles` | Fleet |
-| GET | `/drivers` | Drivers |
-| GET | `/tracking/live` | Live GPS points |
-| GET | `/warehouses` | Warehouses |
-| GET | `/inventory` | Stock |
-| GET | `/invoices` | Invoices |
-| GET | `/finance/summary` | Finance KPIs |
-| GET | `/analytics` | Analytics |
-| GET | `/ai/insights` | AI recommendations |
-| GET | `/customers` | Customers |
-| GET | `/notifications` | Notifications |
-| GET | `/admin/users` | Users (admin) |
-| GET | `/health` | Health check |
+| Method   | Path                      | Description          |
+| -------- | ------------------------- | -------------------- |
+| POST     | `/auth/login`             | Login                |
+| POST     | `/auth/register`          | Register             |
+| GET      | `/auth/me`                | Current user         |
+| GET      | `/dashboard`              | KPI dashboard        |
+| GET/POST | `/orders`                 | List / create orders |
+| POST     | `/orders/:id/advance`     | Advance status       |
+| POST     | `/orders/:id/assign`      | Assign driver        |
+| POST     | `/orders/:id/auto-assign` | AI assign one        |
+| POST     | `/dispatch/auto-assign`   | AI assign queue      |
+| GET      | `/vehicles`               | Fleet                |
+| GET      | `/drivers`                | Drivers              |
+| GET      | `/tracking/live`          | Live GPS points      |
+| GET      | `/warehouses`             | Warehouses           |
+| GET      | `/inventory`              | Stock                |
+| GET      | `/invoices`               | Invoices             |
+| GET      | `/finance/summary`        | Finance KPIs         |
+| GET      | `/analytics`              | Analytics            |
+| GET      | `/ai/insights`            | AI recommendations   |
+| GET      | `/customers`              | Customers            |
+| GET      | `/notifications`          | Notifications        |
+| GET      | `/admin/users`            | Users (admin)        |
+| GET      | `/health`                 | Health check         |
 
 All protected routes require:
 
@@ -144,17 +144,17 @@ Authorization: Bearer <jwt>
 
 ## Modules (from PRD)
 
-- Authentication & RBAC  
-- Orders (14-stage lifecycle)  
-- Warehouse & inventory  
-- Fleet & drivers  
-- GPS tracking  
-- Dispatcher console + AI auto-assign  
-- Finance & invoices  
-- Analytics & heatmaps  
-- Customers & loyalty  
-- AI insights  
-- Notifications  
+- Authentication & RBAC
+- Orders (14-stage lifecycle)
+- Warehouse & inventory
+- Fleet & drivers
+- GPS tracking
+- Dispatcher console + AI auto-assign
+- Finance & invoices
+- Analytics & heatmaps
+- Customers & loyalty
+- AI insights
+- Notifications
 - Admin (users, integrations, security)
 
 ---
@@ -188,6 +188,10 @@ NEXT_PUBLIC_API_URL=http://localhost:5000
 4. Build frontend: `cd frontend && npm run build && npm start`
 5. Process manager: PM2 / Docker / Kubernetes
 6. Attach Redis for sessions/cache and Socket.IO for live GPS (extension points ready)
+
+## Kubernetes
+
+Kubernetes manifests for MongoDB, the API, the Next.js frontend, persistent storage, and NGINX Ingress are in [`k8s/README.md`](k8s/README.md).
 
 ---
 

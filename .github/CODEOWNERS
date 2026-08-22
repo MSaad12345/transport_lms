@@ -1,0 +1,29 @@
+# GitHub CODEOWNERS file
+
+# https://docs.github.com/en/repositories/managing-your-repositorys-settings-and-features/customizing-your-repository/about-code-owners
+
+# Backend code
+
+/backend/ @team/backend-developers
+/backend/src/ @team/backend-developers
+/docker-compose.yml @team/devops
+/backend/Dockerfile @team/devops
+
+# Frontend code
+
+/frontend/ @team/frontend-developers
+/frontend/src/ @team/frontend-developers
+/frontend/Dockerfile @team/devops
+
+# Configuration files
+
+_.yml @team/devops
+_.yaml @team/devops
+Dockerfile @team/devops
+docker-compose.yml @team/devops
+.github/ @team/devops
+
+# Root level
+
+README.md @team/lead-developers
+package.json @team/devops
